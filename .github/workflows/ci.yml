@@ -1,0 +1,28 @@
+name: Next.js CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 코드 체크아웃
+      uses: actions/checkout@v4
+
+    - name: Node.js 설치
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: 의존성 설치
+      run: npm install
+
+    - name: Next.js 빌드
+      run: npm run build
+
+    - name: Vercel 배포
+      run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
