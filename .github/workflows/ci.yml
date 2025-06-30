@@ -25,4 +25,4 @@ jobs:
       run: npm run build
 
     - name: Vercel 배포
-      run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+      run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod --yes
