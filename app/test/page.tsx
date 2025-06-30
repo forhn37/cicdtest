@@ -3,6 +3,7 @@ export default async function Obey() {
     <div>
       <h1>명령하지마라</h1>
       <h1>명령하지마라2</h1>
+      <h1>명령하지마라3</h1>
     </div>
   );
 }
